@@ -60,7 +60,7 @@ namespace Api
             app.UseRouting();
 
             app.UseCors(policy => {
-                policy.AllowAnyHeader().AllowAnyMethod();
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
             });
 
             app.UseAuthorization();
