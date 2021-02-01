@@ -10,7 +10,5 @@ namespace Api
         }
 
         public DbSet<User> Users { get; set; }
-
-        
     }
 }

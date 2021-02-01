@@ -38,6 +38,10 @@ namespace Api
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddRouting(options => {
+                options.LowercaseUrls = true;
+            });
+
             services.AddCors();
         }
 
