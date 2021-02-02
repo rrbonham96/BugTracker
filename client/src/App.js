@@ -6,17 +6,21 @@ function App() {
   let [users, changeUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:5001/api/users")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          changeUsers(result);
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
+    getUsers();
   }, []);
+
+  const getUsers = () => {
+    fetch("https://localhost:5001/api/users")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        changeUsers(result);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  };
 
   return (
     <div className="App">
